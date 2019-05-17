@@ -16,6 +16,7 @@ export default {
 
   &__title {
     margin: 0;
+    padding: 0.5rem;
     color: white;
   }
 }

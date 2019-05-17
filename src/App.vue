@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <app-header/>
+    <search-bar/>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader";
+import SearchBar from "./components/SearchBar";
 export default {
   name: "app",
   components: {
-    AppHeader
+    AppHeader,
+    SearchBar
   }
 };
 </script>
@@ -21,6 +24,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
