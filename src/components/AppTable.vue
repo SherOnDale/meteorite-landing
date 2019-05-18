@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import data from "../assets/data.json";
 import TableRow from "./TableRow";
 export default {
   name: "app-table",
@@ -21,16 +20,22 @@ export default {
       default: ""
     }
   },
+  mounted() {
+    fetch("https://data.nasa.gov/resource/gh4g-9sfh.json")
+      .then(res => res.json())
+      .then(json => {
+        this.data = json;
+      });
+  },
   data() {
     return {
-      data
+      data: []
     };
   },
   computed: {
     filteredData() {
       const searchKeyRegex = new RegExp(this.searchKey, "i");
-      console.log(searchKeyRegex);
-      return data.filter(item => searchKeyRegex.test(item.name));
+      return this.data.filter(item => searchKeyRegex.test(item.name));
     }
   }
 };
