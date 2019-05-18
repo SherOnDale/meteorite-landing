@@ -61,6 +61,11 @@ export default {
   grid-template-columns: 2fr 1fr 2fr 2fr 1fr 1fr 1fr 2fr 2fr;
   text-align: left;
   grid-gap: 3rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.row:nth-child(even) {
+  background-color: #eee;
 }
 
 .row.row__header {
