@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'meteorite-landing'
+  publicPath: process.env.NODE_ENV === 'production' ? 'meteorite-landing' : ''
 };
