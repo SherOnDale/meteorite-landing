@@ -1,18 +1,31 @@
 <template>
   <div id="app">
     <app-header/>
-    <search-bar/>
+    <search-bar @click="setSearchKey"/>
+    <app-table :search-key="searchKey"/>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader";
 import SearchBar from "./components/SearchBar";
+import AppTable from "./components/AppTable";
 export default {
   name: "app",
   components: {
     AppHeader,
-    SearchBar
+    SearchBar,
+    AppTable
+  },
+  data() {
+    return {
+      searchKey: ""
+    };
+  },
+  methods: {
+    setSearchKey(value) {
+      this.searchKey = value;
+    }
   }
 };
 </script>
@@ -23,7 +36,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
 }
 
 html {
